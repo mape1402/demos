@@ -2,6 +2,6 @@
 {
     public class TraceabilityMetadata
     {
-        public string? TraceId { get; set; }
+        public string TraceId { get; set; }
     }
 }

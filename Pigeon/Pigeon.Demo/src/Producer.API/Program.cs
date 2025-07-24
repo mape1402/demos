@@ -14,7 +14,8 @@ builder.Services.AddPigeon(builder.Configuration, settings =>
 {
     settings
         //.UseRabbitMq();
-        .UseKafka();
+        //.UseKafka();
+        .UseAzureServiceBus();
 })
 .AddPublishInterceptor<TraceabilityPublishInterceptor>();
 

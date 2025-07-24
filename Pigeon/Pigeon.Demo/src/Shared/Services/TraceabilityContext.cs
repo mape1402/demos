@@ -2,7 +2,7 @@
 {
     public class TraceabilityContext : ITraceabilityContext
     {
-        private string? _traceId;
+        private string _traceId;
 
         public string GetTraceId()
         {
