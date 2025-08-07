@@ -19,7 +19,7 @@ namespace Producer.API.Controllers
         [HttpPost("helloworld")]
         public async Task<ActionResult> HelloWorld(CancellationToken cancellationToken)
         {
-            await _producer.PublishAsync(new HelloWorldMessage { Text = "Hello World!!" }, $"Demo.Consumer.{Topics.HelloWorld}", cancellationToken);
+            await _producer.PublishAsync(new HelloWorldMessage { Text = "Hello World!!" }, Topics.HelloWorld, cancellationToken);
             return Ok();
         }
 
@@ -32,8 +32,8 @@ namespace Producer.API.Controllers
                 Name = "Test"
             };
 
-            await _producer.PublishAsync(message, $"Demo.Consumer.{Topics.UserCreated}", "1.0.1", cancellationToken);   
-            await _producer.PublishAsync(message, $"Demo.Consumer.{Topics.UserCreated}", cancellationToken);   
+            await _producer.PublishAsync(message, Topics.UserCreated, cancellationToken);
+            await _producer.PublishAsync(message, Topics.UserCreated, "1.0.1", cancellationToken);   
 
             return Ok();
         }

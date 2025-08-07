@@ -13,9 +13,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddPigeon(builder.Configuration, settings =>
 {
     settings
-        //.UseRabbitMq();
+        .UseRabbitMq();
         //.UseKafka();
-        .UseAzureServiceBus();
+        //.UseAzureServiceBus();
 })
 .AddPublishInterceptor<TraceabilityPublishInterceptor>();
 

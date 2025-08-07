@@ -16,9 +16,9 @@ builder.Services.AddPigeon(builder.Configuration, settings =>
 {
     settings
         .ScanConsumersFromAssemblies(typeof(Program).Assembly)
-        //.UseRabbitMq();
+        .UseRabbitMq();
         //.UseKafka()
-        .UseAzureServiceBus();
+        //.UseAzureServiceBus();
 })
 .AddConsumeHandler<HelloWorldMessage>(Topics.HelloWorld, (ctx, message) =>
 {
