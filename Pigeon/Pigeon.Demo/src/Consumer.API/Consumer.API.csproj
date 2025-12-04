@@ -7,6 +7,8 @@
   <ItemGroup>
     <PackageReference Include="Pigeon.Messaging" />
     <PackageReference Include="Pigeon.Messaging.Azure.ServiceBus" />
+    <PackageReference Include="Pigeon.Messaging.Azure.EventGrid" />
+    <PackageReference Include="Pigeon.Messaging.Azure.EventHub" />
     <PackageReference Include="Pigeon.Messaging.Kafka" />
     <PackageReference Include="Pigeon.Messaging.Rabbit" />
     <PackageReference Include="Swashbuckle.AspNetCore" />

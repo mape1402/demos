@@ -16,14 +16,15 @@ builder.Services.AddPigeon(builder.Configuration, settings =>
 {
     settings
         .ScanConsumersFromAssemblies(typeof(Program).Assembly)
-        .UseRabbitMq();
-        //.UseKafka()
+        //.UseRabbitMq();
+        //.UseKafka();
         //.UseAzureServiceBus();
+        .UseAzureEventGrid();
 })
-.AddConsumeHandler<HelloWorldMessage>(Topics.HelloWorld, (ctx, message) =>
+.AddConsumeHandler<object>(Topics.HelloWorld, (ctx, message) =>
 {
     var logger = ctx.Services.GetService<ILogger<HelloWorldMessage>>()!;
-    logger.LogInformation(message.Text);
+    logger.LogInformation(message.ToString());
 
     return Task.CompletedTask;
 })
